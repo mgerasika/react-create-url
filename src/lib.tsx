@@ -69,7 +69,7 @@ const formatUrlName = (str: string): string => {
   return str.toString().replace(/([A-Z])/g, (str) => "-" + str.toLowerCase());
 };
 
-export function createUrl<T>(routes: T): T {
+export function createUrls<T>(routes: T): T {
   return new UrlItem("", undefined, routes, true) as unknown as T;
 }
 
