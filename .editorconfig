@@ -1,0 +1,54 @@
+{
+    "editor.tabSize": 2,
+		"javascript.format.semicolons": "insert",
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ]
+    },
+	"editor.insertSpaces": false,
+	"workbench.colorTheme": "Monokai",
+	"javascript.updateImportsOnFileMove.enabled": "never",
+	"editor.fontSize": 11,
+	"window.restoreFullscreen": true,
+	"window.nativeTabs": true,
+	"search.showLineNumbers": true,
+	"editor.detectIndentation": false,
+	"editor.dragAndDrop": false,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": true,
+	"eslint.nodePath": "./node_modules/eslint/",
+	"editor.suggestSelection": "first",
+	"editor.defaultFormatter": "vscode.typescript-language-features",
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+	"typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+	"javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+	"search.useIgnoreFiles": false,
+	"html.format.wrapAttributes": "force-expand-multiline",
+	"html.format.endWithNewline": true,
+	"html.format.preserveNewLines": true,
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"diffEditor.ignoreTrimWhitespace": true,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"eslint.alwaysShowStatus": true,
+	"typescript.tsserver.log": "verbose",
+	"workbench.editor.wrapTabs": true,
+	"files.exclude": {
+		"**/dist/**": true
+	},
+	"files.watcherExclude": {
+		"**/dist/**": true
+	},
+	"search.exclude": {
+		"**/dist/**": true
+	}
+}
