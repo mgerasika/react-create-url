@@ -1,3 +1,6 @@
+### In this small library, you can use typescript object/methods for building route urls
+
+```
 interface IAppRoute {
   auth: {
     account: {
@@ -24,3 +27,4 @@ describe("make-urls", () => {
     ).toEqual("/auth/check/e87a8340-1a81-4013-a8c8-c5ab8ec205ea");
   });
 });
+```
