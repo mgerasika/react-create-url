@@ -1,4 +1,5 @@
-### In this small library, you can use typescript object/methods for building route urls
+## In this small library, you can use typescript object/methods for building route urls.
+### 1.First step - create interface with all routings in your web app.
 
 ```
 interface IAppRoute {
@@ -9,7 +10,9 @@ interface IAppRoute {
     login: IUrlItem;
   };
 }
-
+```
+### 2.Seccond step - create object and call createUrls() method with similar implementation
+```
 const appRoutes = createUrls<IAppRoute>({
   auth: {
     login: EMPTY_URL_ITEM,
@@ -18,13 +21,17 @@ const appRoutes = createUrls<IAppRoute>({
     },
   },
 });
-describe("make-urls", () => {
-  it("my-test", () => {
-    expect(appRoutes.auth.toString()).toEqual("/auth");
-    expect(appRoutes.auth.login.toString()).toEqual("/auth/login");
-    expect(appRoutes.auth.account.id().toString()).toEqual("/auth/check/:id");
-    expect(appRoutes.auth.account.id("e87a8340-1a81-4013-a8c8-c5ab8ec205ea").toString()
-    ).toEqual("/auth/check/e87a8340-1a81-4013-a8c8-c5ab8ec205ea");
+```
+### 3. Example of usage.
+```
+axios.get(appRoutes.auth.account.id("e87a8340-1a81-4013-a8c8-c5ab8ec205ea")) // instead axios.get("/auth/check/e87a8340-1a81-4013-a8c8-c5ab8ec205ea")
+...
+describe("create-urls", () => {
+  it("test urls", () => {
+    expect(appRoutes.auth).toEqual("/auth");
+    expect(appRoutes.auth.login).toEqual("/auth/login");
+    expect(appRoutes.auth.account.id()).toEqual("/auth/check/:id");
+    expect(appRoutes.auth.account.id("e87a8340-1a81-4013-a8c8-c5ab8ec205ea").toEqual("/auth/check/e87a8340-1a81-4013-a8c8-c5ab8ec205ea");
   });
 });
 ```
