@@ -1,4 +1,4 @@
-## In this small library, you can use typescript object/methods for building route urls.
+## In this small library, you can use typescript object/methods for building route/api urls.
 ### 1.First step - create interface with all routings in your web app.
 
 ```
