@@ -2,8 +2,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import babel from '@rollup/plugin-babel';
 
-// To handle css files
-import postcss from "rollup-plugin-postcss";
 
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
@@ -14,11 +12,11 @@ import image from '@rollup/plugin-image';
 const packageJson = require("./package.json");
 const config = {
 	name: 'DesignSystem',
-	extensions: ['.ts', '.tsx'],
+	extensions: ['.ts', '.ts'],
 };
 export default [
 	{
-		input: "src/lib.tsx",
+		input: "src/lib.ts",
 		output: [
 			{
 				file: packageJson.main,
@@ -39,12 +37,10 @@ export default [
 				include: ['src/**/*'],
 				exclude: 'node_modules/**',
 				presets: [
-					"@babel/preset-react",
 					"@babel/preset-typescript",
 				],
 			}),
 
-			postcss(),
 			terser(),
 			image()
 		],
