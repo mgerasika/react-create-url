@@ -16,7 +16,7 @@ const config = {
 };
 export default [
 	{
-		input: "src/lib.ts",
+		input: "src/index.ts",
 		output: [
 			{
 				file: packageJson.main,

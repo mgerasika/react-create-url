@@ -1,5 +1,5 @@
 import { expect } from "@jest/globals";
-import { createUrls, EMPTY_URL_ITEM, IUrlItem } from "./lib";
+import { createUrls, EMPTY_URL_ITEM, IUrlItem } from "../src/url-item.class";
 
 interface IAppRoute {
   auth: {
@@ -23,7 +23,10 @@ describe("make-urls", () => {
     expect(appRoutes.auth.toString()).toEqual("/auth");
     expect(appRoutes.auth.login.toString()).toEqual("/auth/login");
     expect(appRoutes.auth.account.id().toString()).toEqual("/auth/check/:id");
-    expect(appRoutes.auth.account.id("e87a8340-1a81-4013-a8c8-c5ab8ec205ea").toString()
+    expect(
+      appRoutes.auth.account
+        .id("e87a8340-1a81-4013-a8c8-c5ab8ec205ea")
+        .toString()
     ).toEqual("/auth/check/e87a8340-1a81-4013-a8c8-c5ab8ec205ea");
   });
 });

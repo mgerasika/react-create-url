@@ -1,12 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-interface IDictionary<TValue = any> {
-  [id: string]: TValue;
-}
-
-export interface IUrlItem {
-  toString: () => string;
-  formattedName?: string;
-}
+import { IDictionary } from "./dictionary.interface";
+import { formatUrlName } from "./format-url-name.utils";
+import { IUrlItem } from "./url-item.interface";
 
 export class UrlItem implements IUrlItem {
   public name = "";
@@ -62,15 +56,7 @@ export class UrlItem implements IUrlItem {
   }
 }
 
-const formatUrlName = (str: string): string => {
-  if (str === "index") {
-    return "";
-  }
-  return str.toString().replace(/([A-Z])/g, (str) => "-" + str.toLowerCase());
-};
 
-export function createUrls<T>(routes: T): T {
-  return new UrlItem("", undefined, routes, true) as unknown as T;
-}
 
-export const EMPTY_URL_ITEM: IUrlItem = {} as unknown as IUrlItem;
+
+
