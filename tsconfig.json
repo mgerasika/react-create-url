@@ -20,5 +20,6 @@
     "outDir": "dist",
     "baseUrl": "."
   },
-  "include": ["src", "tests/make-urls.test.ts"]
+  "include": ["src", "tests/make-urls.test.ts"],
+  "exclude": ["tests"]
 }

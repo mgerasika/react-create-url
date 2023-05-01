@@ -52,11 +52,9 @@ export class UrlItem implements IUrlItem {
     const name = this._canFormatRouteName
       ? formatUrlName(this.name)
       : this.name;
+    if (this.parent?.name == "index") {
+      return this.parent + name;
+    }
     return this.parent ? this.parent + "/" + name : name;
   }
 }
-
-
-
-
-
