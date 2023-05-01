@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["node", "jest", "@types/jest"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -9,15 +10,15 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "dist/types",
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "."
   },
   "include": ["src", "tests/make-urls.test.ts"]
 }

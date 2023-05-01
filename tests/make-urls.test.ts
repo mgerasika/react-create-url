@@ -1,5 +1,7 @@
 import { expect } from "@jest/globals";
-import { createUrls, EMPTY_URL_ITEM, IUrlItem } from "../src/url-item.class";
+import { createUrls } from "../src/create-urls.util";
+import { EMPTY_URL_ITEM } from "../src/empty-url-item.constant";
+import { IUrlItem } from "../src/url-item.interface";
 
 interface IAppRoute {
   auth: {
