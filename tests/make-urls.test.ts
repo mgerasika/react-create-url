@@ -12,6 +12,7 @@ interface IAppRoute {
   auth: {
     account: {
       id: (id?: string) => IUrlItem;
+      lastName: (lastName?: string) => IUrlItem;
     };
     login: IUrlItem;
   };
@@ -27,6 +28,7 @@ const appRoutes = createUrls<IAppRoute>({
     login: EMPTY_URL_ITEM,
     account: {
       id: (id?: string) => EMPTY_URL_ITEM,
+      lastName: (lastName?: string) => EMPTY_URL_ITEM,
     },
   },
 });
@@ -39,6 +41,9 @@ describe("make-urls", () => {
     expect(appRoutes.auth.toString()).toEqual("/auth");
     expect(appRoutes.auth.login.toString()).toEqual("/auth/login");
     expect(appRoutes.auth.account.id().toString()).toEqual("/auth/account/:id");
+    expect(appRoutes.auth.account.lastName().toString()).toEqual(
+      "/auth/account/:lastName"
+    );
     expect(
       appRoutes.auth.account
         .id("e87a8340-1a81-4013-a8c8-c5ab8ec205ea")
